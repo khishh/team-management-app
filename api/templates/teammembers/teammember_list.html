@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Team Members</h2>
+    <h4>You have {{ object_list|length }} team members.</h4>
+    <hr>
+
+    {% for teammember in object_list %}
+        <div id="teammember-list-wrapper">
+            <div class="teammember-img-wrapper">
+                <img class="teammember-img" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" alt="">
+            </div>
+            <div class="teammember-info-wrapper">
+                <p>{{ teammember.first_name }} {{ teammember.last_name }}</p>
+                <p>{{ teammember.phone_number }}</p>
+                <p>{{ teammember.email }}</p>
+            </div>
+            
+        </div>
+        <hr>
+
+    {% endfor %}
+{% endblock %}

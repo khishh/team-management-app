@@ -22,4 +22,5 @@ class TeamMemberViewSet(viewsets.ModelViewSet):
 
 class TeamMemberListView(ListView):
     model = TeamMember
+    template_name = 'teammembers/teammember_list.html'
 

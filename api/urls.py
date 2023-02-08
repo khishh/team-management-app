@@ -9,5 +9,6 @@ router.register(r'teammembers', views.TeamMemberViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('datetime/', views.current_datetime)
+    path('datetime/', views.current_datetime),
+    path('teammembers/list', views.TeamMemberListView.as_view())
 ]

@@ -1,0 +1,17 @@
+#teammember-list-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.teammember-img-wrapper {
+    margin: 20px;
+}
+
+.teammember-img {
+    height: 100px;
+    width: 100px;
+}
+
+.teammember-info-wrapper {
+    margin: 20px;
+}
