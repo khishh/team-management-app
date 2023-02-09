@@ -1,0 +1,16 @@
+.form-teammember-edit {
+    display: block;
+}
+
+.form-role-select {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-role-discription {
+    flex: 1 0 0;
+}
+
+.form-role-radio {
+    flex: 1 0 0;
+}

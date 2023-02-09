@@ -1,3 +1,16 @@
+#teammember-list-header-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#teammember-list-header-left {
+    flex: 1 0 0;
+}
+
+#teammember-list-header-right {
+    margin: auto;
+}
+
 #teammember-list-wrapper {
     display: flex;
     flex-direction: row;
@@ -15,3 +28,4 @@
 .teammember-info-wrapper {
     margin: 20px;
 }
+

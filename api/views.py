@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from rest_framework import viewsets
 
 from .serializer import TeamMemberSerializer
@@ -23,4 +23,13 @@ class TeamMemberViewSet(viewsets.ModelViewSet):
 class TeamMemberListView(ListView):
     model = TeamMember
     template_name = 'teammembers/teammember_list.html'
+    context_object_name = 'team_members'
+
+class TeamMemberDetailView(DetailView):
+    model = TeamMember
+    template_name = 'teammembers/teammember_details.html'
+    context_object_name = 'team_member'
+
+    def onclick():
+        print('button clicked')
 

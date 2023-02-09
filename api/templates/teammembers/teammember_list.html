@@ -1,22 +1,33 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-    <h2>Team Members</h2>
-    <h4>You have {{ object_list|length }} team members.</h4>
-    <hr>
 
-    {% for teammember in object_list %}
-        <div id="teammember-list-wrapper">
+    <div id="teammember-list-header-wrapper">
+        <div id="teammember-list-header-left">
+            <p class="fs-2 fw-bolder black-text ">Team Members</h2>
+            <p class="fs-4 grey-text">You have {{ team_members|length }} team members.</h4>
+        </div>
+        <div id="teammember-list-header-right">
+            <button type="button" class="btn btn-success">Add new member</button>
+        </div>
+    </div>
+    
+    <hr class="grey-separator">
+
+    {% for teammember in team_members %}
+        <div id="teammember-list-wrapper" onclick="location.href='{{ teammember.id }}';">
             <div class="teammember-img-wrapper">
-                <img class="teammember-img" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" alt="">
+                <img class="teammember-img" src={% static 'image/user-3296.png' %} alt="">
             </div>
             <div class="teammember-info-wrapper">
-                <p>{{ teammember.first_name }} {{ teammember.last_name }}</p>
-                <p>{{ teammember.phone_number }}</p>
-                <p>{{ teammember.email }}</p>
+                <p class="fs-4 black-text fw-bolder">{{ teammember.first_name }} {{ teammember.last_name }}</p>
+                <p class="fs-6 grey-text">{{ teammember.phone_number }}</p>
+                <p class="fs-6 grey-text">{{ teammember.email }}</p>
             </div>
             
         </div>
-        <hr>
-
+        <hr class="grey-separator">
     {% endfor %}
+
+
 {% endblock %}
