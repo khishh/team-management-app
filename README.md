@@ -23,13 +23,31 @@ A simple Team Management Web application built with Django. (take-home assignmen
 
 **For those interested in running locally, please feel free to contact me.**
 
+1. Navigate to the project directory
+
+2. Create a virtual environment (* Need to install virtualenv via pip before)
+
+```
+virtualenv env
+```
+
+```
+virtualenv env
+```
+
+3. Install all dependencies specified in requirements.txt
+
 ```
 pip3 install -r requirements.txt
 ```
 
+4. Set up the DB with model schemas
+
 ```
 python3 manage.py migrate
 ```
+
+5. Spin up the server
 
 ```
 python3 manage.py runserver
@@ -39,6 +57,10 @@ python3 manage.py runserver
 
 The following command will run both unit tests and integration tests.
 
+```
+DJANGO_DATABASE='tests' python3 manage.py runserver
+```
+
 ### What IntegrationTest using Selenium tests
 
 - Users can see a list of teammembers to users
@@ -46,6 +68,3 @@ The following command will run both unit tests and integration tests.
 - Users can edit an existing member and see instant changes
 - Users can delete an existing member
 
-```
-DJANGO_DATABASE='tests' python3 manage.py runserver
-```
