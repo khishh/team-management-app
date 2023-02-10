@@ -33,3 +33,7 @@
     width: 120px;
 }
 
+.errorlist {
+    color: #DC3545;
+    font-weight: bolder;
+}

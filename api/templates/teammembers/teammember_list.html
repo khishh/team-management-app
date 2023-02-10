@@ -20,7 +20,7 @@
                 <img class="teammember-img" src={% static 'image/user-3296.png' %} alt="">
             </div>
             <div class="teammember-info-wrapper">
-                <p class="fs-4 black-text fw-bolder">{{ teammember.first_name }} {{ teammember.last_name }}</p>
+                <p class="fs-4 black-text fw-bolder">{{ teammember.first_name }} {{ teammember.last_name }} {% if teammember.is_admin %}(Admin){% endif %}</p>
                 <p class="fs-6 grey-text">{{ teammember.phone_number }}</p>
                 <p class="fs-6 grey-text">{{ teammember.email }}</p>
             </div>
