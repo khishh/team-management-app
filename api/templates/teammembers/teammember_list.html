@@ -4,25 +4,25 @@
 
     <div id="teammember-list-header-wrapper">
         <div id="teammember-list-header-left">
-            <p class="fs-2 fw-bolder black-text ">Team Members</h2>
-            <p class="fs-4 grey-text">You have {{ team_members|length }} team members.</h4>
+            <p class="fs-2 fw-bolder black-text page-header">Team Members</h2>
+            <p class="fs-4 grey-text page-subheader">You have {{ team_members|length }} team members.</h4>
         </div>
         <div id="teammember-list-header-right">
-            <button type="button" class="btn btn-primary" onclick="location.href='add'">Add new member</button>
+            <button id="add-member-btn" type="button" class="btn btn-primary" onclick="location.href='add'">Add new member</button>
         </div>
     </div>
     
     <hr class="grey-separator">
 
     {% for teammember in team_members %}
-        <div id="teammember-list-wrapper" onclick="location.href='{{ teammember.id }}/edit';">
+        <div class="teammember-list-wrapper" onclick="location.href='{{ teammember.id }}/edit';">
             <div class="teammember-img-wrapper">
                 <img class="teammember-img" src={% static 'image/user-3296.png' %} alt="">
             </div>
             <div class="teammember-info-wrapper">
-                <p class="fs-4 black-text fw-bolder">{{ teammember.first_name }} {{ teammember.last_name }} {% if teammember.is_admin %}(Admin){% endif %}</p>
-                <p class="fs-6 grey-text">{{ teammember.phone_number }}</p>
-                <p class="fs-6 grey-text">{{ teammember.email }}</p>
+                <p class="fs-4 black-text fw-bolder teammember-name">{{ teammember.first_name }} {{ teammember.last_name }} {% if teammember.is_admin %}(Admin){% endif %}</p>
+                <p class="fs-6 grey-text teammember-phone-number">{{ teammember.phone_number }}</p>
+                <p class="fs-6 grey-text team-member-email">{{ teammember.email }}</p>
             </div>
             
         </div>

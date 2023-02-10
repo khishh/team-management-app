@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import environ
 import os
+import sys
+
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -90,8 +92,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'tests': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'test-db.sqlite3',
     }
 }
+
+default_database = os.environ.get('DJANGO_DATABASE', 'default')
+print(default_database)
+DATABASES['default'] = DATABASES[default_database]
 
 
 # Password validation

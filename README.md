@@ -34,3 +34,18 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
+
+## How to run Unit Test and Integration Test
+
+The following command will run both unit tests and integration tests.
+
+### What IntegrationTest using Selenium tests
+
+- Users can see a list of teammembers to users
+- Users can add a new member and see it in the list
+- Users can edit an existing member and see instant changes
+- Users can delete an existing member
+
+```
+DJANGO_DATABASE='tests' python3 manage.py runserver
+```

@@ -11,12 +11,12 @@
     margin: auto;
 }
 
-#teammember-list-wrapper {
+.teammember-list-wrapper {
     display: flex;
     flex-direction: row;
 }
 
-#teammember-list-wrapper:hover {
+.teammember-list-wrapper:hover {
     background-color: #e1f5fe;
 }
 
