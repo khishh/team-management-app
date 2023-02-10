@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p class="fs-2 fw-bolder black-text ">Add a team member</h2>
+<p class="fs-4 grey-text">Set email, location, and role.</h4>
+<hr>
+<form action="form" method="post">
+    <div class="form-group black-text">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary submit-button" style="float: right; clear: right;">Save</button>
+</form>
+
+{% endblock %}
