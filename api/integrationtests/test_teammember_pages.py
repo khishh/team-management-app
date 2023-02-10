@@ -85,7 +85,7 @@ class TeamMemberPages(LiveServerTestCase):
         super().tearDownClass()
 
     def testTeamMemberListContent(self):
-        self.driver.get('http://localhost:8000/teammembers/')
+        self.driver.get('http://localhost:8000/')
 
         # check title and headers
         self.assertEqual(self.driver.title, 'Team Management App')
@@ -105,7 +105,7 @@ class TeamMemberPages(LiveServerTestCase):
         self.assertEqual(add_member_btn.text, 'Add new member')
 
     def testAddNewMemberScenario(self):
-        self.driver.get('http://localhost:8000/teammembers/')
+        self.driver.get('http://localhost:8000/')
         add_member_btn = self.driver.find_element(
             By.ID, 'add-member-btn')
 
@@ -114,7 +114,7 @@ class TeamMemberPages(LiveServerTestCase):
 
         # check the current url
         self.assertTrue(self.driver.current_url,
-                        f'http://localhost:8000/teammembers/add')
+                        f'http://localhost:8000/add')
 
         # fill out the form and submit
 
@@ -125,7 +125,7 @@ class TeamMemberPages(LiveServerTestCase):
 
         # check the current url after redirect
         self.assertTrue(self.driver.current_url,
-                        f'http://localhost:8000/teammembers/')
+                        f'http://localhost:8000/')
 
         # check the newly added user info
         verify_teammember_info(
@@ -136,7 +136,7 @@ class TeamMemberPages(LiveServerTestCase):
         )
 
     def testEditMemberScenario(self):
-        self.driver.get('http://localhost:8000/teammembers/')
+        self.driver.get('http://localhost:8000/')
 
         teammember_idx = 0
 
@@ -147,7 +147,7 @@ class TeamMemberPages(LiveServerTestCase):
 
         # check the current url after redirect
         self.assertRegex(self.driver.current_url,
-                         r'^http://localhost:8000/teammembers/[0-9]{1,}/edit')
+                         r'^http://localhost:8000/[0-9]{1,}/edit')
 
         now = int(time.time())
         edit_member_info = {
@@ -164,7 +164,7 @@ class TeamMemberPages(LiveServerTestCase):
 
         # check the current url after redirect
         self.assertTrue(self.driver.current_url,
-                        f'http://localhost:8000/teammembers/')
+                        f'http://localhost:8000/')
 
         
         # check the newly added user info
@@ -176,7 +176,7 @@ class TeamMemberPages(LiveServerTestCase):
         )
 
     def testDeleteMemberScenario(self):
-        self.driver.get('http://localhost:8000/teammembers/')
+        self.driver.get('http://localhost:8000/')
 
         teammember_idx = 0
         num_of_teammembers = len(self.driver.find_elements(
@@ -192,13 +192,13 @@ class TeamMemberPages(LiveServerTestCase):
 
         # check the current url after redirect
         self.assertRegex(self.driver.current_url,
-                         r'^http://localhost:8000/teammembers/[0-9]{1,}/edit')
+                         r'^http://localhost:8000/[0-9]{1,}/edit')
 
         self.driver.find_element(By.ID, 'teammember-delete-btn').click()
 
          # check the current url after redirect
         self.assertTrue(self.driver.current_url,
-                        f'http://localhost:8000/teammembers/')
+                        f'http://localhost:8000/')
 
         first_member_wrapper = self.driver.find_elements(
             By.CLASS_NAME, 'teammember-list-wrapper')[teammember_idx]

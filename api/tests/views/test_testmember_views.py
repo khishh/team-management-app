@@ -20,15 +20,15 @@ class TeamMamberListViewTest(TestCase):
             )
 
     def test_list_view_url_exist(self):
-        response = self.client.get('/teammembers/')
+        response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 
     def test_list_view_verify_template(self):
-        response = self.client.get('/teammembers/')
+        response = self.client.get('/')
         self.assertTemplateUsed(response, 'teammembers/teammember_list.html')
 
     def test_list_all_teammember(self):
-        response = self.client.get('/teammembers/')
+        response = self.client.get('/')
         teammembers = response.context['team_members']
         self.assertTrue(len(teammembers), num_of_teammember)
 

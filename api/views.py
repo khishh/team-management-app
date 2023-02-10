@@ -46,7 +46,7 @@ def add_teammember_form(request):
         if form.is_valid():
             new_member = convert_member_from_form(form.cleaned_data)
             new_member.save()
-            return HttpResponseRedirect('/teammembers')
+            return HttpResponseRedirect('/')
 
     else:
         form = TeamMemberForm()
@@ -62,7 +62,7 @@ def edit_teammember_form(request, pk):
             for key, value in form.cleaned_data.items():
                 setattr(teammember, key, value)
             teammember.save()
-            return HttpResponseRedirect('/teammembers')
+            return HttpResponseRedirect('/')
     else:
         form = TeamMemberForm(instance=teammember)
 
@@ -71,4 +71,4 @@ def edit_teammember_form(request, pk):
 def delete_teammember(request, pk):
     teammember = get_object_or_404(TeamMember, pk=pk)
     teammember.delete()
-    return HttpResponseRedirect('/teammembers')
+    return HttpResponseRedirect('/')

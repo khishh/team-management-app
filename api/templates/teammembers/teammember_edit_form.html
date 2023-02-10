@@ -10,7 +10,7 @@
         {% csrf_token %}
         {{ form.as_p }}
     </div>
-    <button id="teammember-delete-btn" type="button" class="btn btn-danger submit-button" onclick="location.href='/teammembers/{{ teammember.id }}/delete'">Delete</button>
+    <button id="teammember-delete-btn" type="button" class="btn btn-danger submit-button" onclick="location.href='/{{ teammember.id }}/delete'">Delete</button>
     <button id="teammember-submit-btn" type="submit" class="btn btn-primary submit-button" style="float: right; clear: right;">Save</button>
 </form>
 
