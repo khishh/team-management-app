@@ -6,11 +6,11 @@ A simple Team Management Web application built with Django. (take-home assignmen
 
 ### Features
 
-- [ ] Users can browse a list of team members
-- [ ] Users can browse details of one team member
-- [ ] Users can edit information of a team member
-- [ ] Users can add a new team member
-- [ ] Users can delete an existing team member
+- [x] Users can browse a list of team members
+- [x] Users can browse details of one team member
+- [x] Users can edit information of a team member
+- [x] Users can add a new team member
+- [x] Users can delete an existing team member
 
 ### Others
 
