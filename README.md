@@ -1,6 +1,7 @@
 # team-management-app
 
-A simple Team Management Web application built with Django. (take-home assignment)
+A simple Team Management Web application built with Django.
+This task was given as a take-home assignment where I spent approximately 15 hours.
 
 ## TODO
 
@@ -14,8 +15,8 @@ A simple Team Management Web application built with Django. (take-home assignmen
 
 ### Others
 
-- [ ] Write test suite for Views
-- [ ] Write test suite for endpoints
+- [x] Write unit tests for models, views, adn forms.
+- [x] Write integration test to verify the behavior of the core functionalities.
 
 ## How to install and run this app locally
 
