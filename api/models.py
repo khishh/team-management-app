@@ -9,6 +9,6 @@ class TeamMember(models.Model):
     is_admin = models.BooleanField(default=False)
 
     def __str__(self) -> str:
-        return self.first_name + self.last_name
+        return  self.first_name + self.last_name
 
 

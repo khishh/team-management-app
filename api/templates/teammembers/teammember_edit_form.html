@@ -2,14 +2,15 @@
 
 {% block content %}
 
-<p class="fs-2 fw-bolder black-text ">Add a team member</h2>
-<p class="fs-4 grey-text">Set email, location, and role.</h4>
+<p class="fs-2 fw-bolder black-text ">Edit a team member</h2>
+<p class="fs-4 grey-text">Edit email, location, and role.</h4>
 <hr>
 <form action="" method="post">
     <div class="form-group black-text">
         {% csrf_token %}
         {{ form.as_p }}
     </div>
+    <button type="button" class="btn btn-danger submit-button" onclick="location.href='/teammembers/{{ teammember.id }}/delete'">Delete</button>
     <button type="submit" class="btn btn-primary submit-button" style="float: right; clear: right;">Save</button>
 </form>
 

@@ -55,16 +55,20 @@ def add_teammember_form(request):
 
 def edit_teammember_form(request, pk):
     teammember = get_object_or_404(TeamMember, pk=pk)
-    print(teammember.first_name)
     if request.method == 'POST':
         form = TeamMemberForm(request.POST)
-
+        
         if form.is_valid():
-            new_member = convert_member_from_form(form.cleaned_data)
-            new_member.save()
+            for key, value in form.cleaned_data.items():
+                setattr(teammember, key, value)
+            teammember.save()
             return HttpResponseRedirect('/teammembers')
-
     else:
-        form = TeamMemberForm()
+        form = TeamMemberForm(instance=teammember)
 
-    return render(request, 'teammembers/teammember_add_form.html', {'form': form})
+    return render(request, 'teammembers/teammember_edit_form.html', {'form': form, 'teammember': teammember})
+
+def delete_teammember(request, pk):
+    teammember = get_object_or_404(TeamMember, pk=pk)
+    teammember.delete()
+    return HttpResponseRedirect('/teammembers')

@@ -15,7 +15,7 @@
     <hr class="grey-separator">
 
     {% for teammember in team_members %}
-        <div id="teammember-list-wrapper" onclick="location.href='{{ teammember.id }}';">
+        <div id="teammember-list-wrapper" onclick="location.href='{{ teammember.id }}/edit';">
             <div class="teammember-img-wrapper">
                 <img class="teammember-img" src={% static 'image/user-3296.png' %} alt="">
             </div>
