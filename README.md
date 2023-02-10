@@ -54,6 +54,8 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
+6. Open up http://localhost:8000/
+
 ## How to run Unit Test and Integration Test
 
 The following command will run both unit tests and integration tests.
