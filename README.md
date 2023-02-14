@@ -33,19 +33,19 @@ virtualenv env
 ```
 
 ```
-virtualenv env
+source env/bin/activate
 ```
 
 3. Install all dependencies specified in requirements.txt
 
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 4. Set up the DB with model schemas
 
 ```
-python3 manage.py migrate
+python manage.py migrate
 ```
 
 5. Spin up the server
