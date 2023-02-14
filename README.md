@@ -58,11 +58,13 @@ python3 manage.py runserver
 
 ## How to run Unit Test and Integration Test
 
-The following command will run both unit tests and integration tests.
+First. spin up the server with tests database by specifying the env variable.
 
 ```
 DJANGO_DATABASE='tests' python3 manage.py runserver
 ```
+
+The following command will run both unit tests and integration tests.
 
 ```
 python3 manage.py test
