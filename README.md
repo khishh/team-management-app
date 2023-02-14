@@ -64,6 +64,10 @@ The following command will run both unit tests and integration tests.
 DJANGO_DATABASE='tests' python3 manage.py runserver
 ```
 
+'''
+python3 manage.py test
+'''
+
 ### What IntegrationTest using Selenium tests
 
 - Users can see a list of teammembers to users
