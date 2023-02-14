@@ -26,7 +26,9 @@ This task was given as a take-home assignment where I spent approximately 15 hou
 
 1. Navigate to the project directory
 
-2. Create a virtual environment (* Need to install virtualenv via pip before)
+2. Make sure to place .env file under the root directory.
+
+3. Create a virtual environment (* Need to install virtualenv via pip before)
 
 ```
 virtualenv env
@@ -36,25 +38,25 @@ virtualenv env
 source env/bin/activate
 ```
 
-3. Install all dependencies specified in requirements.txt
+4. Install all dependencies specified in requirements.txt
 
 ```
 pip install -r requirements.txt
 ```
 
-4. Set up the DB with model schemas
+5. Set up the DB with model schemas
 
 ```
 python manage.py migrate
 ```
 
-5. Spin up the server
+6. Spin up the server
 
 ```
 python3 manage.py runserver
 ```
 
-6. Open up http://localhost:8000/
+7. Open up http://localhost:8000/
 
 ## How to run Unit Test and Integration Test
 
