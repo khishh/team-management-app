@@ -26,7 +26,7 @@ This task was given as a take-home assignment where I spent approximately 15 hou
 
 1. Navigate to the project directory
 
-2. Make sure to set SECRET_KEY in .env file under the root directory. The key can be obtained from here: https://upload.disroot.org/r/R8UJXZup#yFGr/IPFicNyiEcgxEDwMLTcNrSFTp6pnyR57f0VIPM=
+2. Make sure to set SECRET_KEY in .env file under the root directory.
 
 3. Create a virtual environment (* Need to install virtualenv via pip before)
 
